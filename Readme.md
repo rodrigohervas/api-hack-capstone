@@ -1,6 +1,6 @@
 ## DineOut:
 
-### api-capstone-hack
+### api-hack-capstone
 
 
 This is an app to search for restaurants in your favorite cities.
