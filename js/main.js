@@ -90,8 +90,8 @@ function displayResults(data) {
         <input type="hidden" id="lat${number}" value="${validateData(restaurant.location.lat)}">
         <input type="hidden" id="lng${number}" value="${validateData(restaurant.location.lng)}">
 
-        <img id="result-card-img" src="${restaurant.bestPhoto != undefined ? composePhoto(restaurant.bestPhoto) : `./img/food-${getRandomNumber()}-300x300.jpg`}
-        " alt="" class="result-img">
+        <img id="result-card-img" src="${restaurant.bestPhoto != undefined ? composePhoto(restaurant.bestPhoto) : `./img/food-${getRandomNumber()}-300x300.jpg`}"
+         alt="${validateData(restaurant.name)}" class="result-img">
         <div class="result-card-text">
             <div class="result-card-text-header">
                 <div class="name-address">
@@ -116,7 +116,7 @@ function displayResults(data) {
                         <div id="map${number}" class="map">
                         </div>
                         <div class="hours">
-                            <table>
+                            <table caption="Hours of Operation">
                                 <tr><th colspan="2"><h4>Hours of operation:</h4></th></tr>
                                 <tr><th>Status:</th><td>${ restaurant.hasOwnProperty('hours') ? restaurant.hours.status : 'not available' } </td></tr>
                                 ${ !(restaurant.hasOwnProperty('hours')) ? '<tr><th>Hours:</th><td>not available</td></tr>' :
