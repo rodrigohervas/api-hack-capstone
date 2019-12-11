@@ -1,3 +1,12 @@
+'use strict';
+
+/**
+ * Function that creates a Google Maps API map and loads it in the UI
+ * 
+ * @param {Div HTMLElement} canvas 
+ * @param {string} lat 
+ * @param {string} lng 
+ */
 export function createMap(canvas, lat, lng) {
     try {
         const latitude = parseFloat(lat);
@@ -19,7 +28,7 @@ export function createMap(canvas, lat, lng) {
         });
     }
     catch (error){
-        //console.log(`Error in createMap(): ${error.message}`);
+        throw error;
     }
 }
 

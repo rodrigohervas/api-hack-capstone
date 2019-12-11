@@ -12,7 +12,13 @@ const v = configuration.v;
 const urlSearch = configuration.urlSearch;
 const urlDetails = configuration.urlDetails;
 
-/* COMPOSE URL */
+/**
+ * Function that processes the parameter object necessary for the API request Url
+ * 
+ * @param {object} paramValues 
+ * @param {string} searchType 
+ * @param {number} restaurantId 
+ */
 function composeUrl(paramValues, searchType, restaurantId = 0) {
     let params = {
         client_id: clientId, 
@@ -31,7 +37,11 @@ function composeUrl(paramValues, searchType, restaurantId = 0) {
     return generateUrl(params, searchType, restaurantId);
 }
 
-
+/**
+ * Function that generates the parameter querystring for the API request Url
+ * 
+ * @param {object} params 
+ */
 function generateQueryString(params) {
     let queryItems = Object.keys(params)
         .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`);
@@ -39,7 +49,13 @@ function generateQueryString(params) {
     return queryItems.join('&');
 }
 
-
+/**
+ * Function that generates the API request Url
+ * 
+ * @param {object} params 
+ * @param {string} searchType 
+ * @param {number} restaurantId 
+ */
 function generateUrl(params, searchType, restaurantId = 0) {
     const queryString = generateQueryString(params);
     if (searchType === 'search') {
@@ -50,7 +66,13 @@ function generateUrl(params, searchType, restaurantId = 0) {
     }
 }
 
-/* Fetch API function */
+/**
+ * Fetch API function
+ * 
+ * @param {object} paramValues 
+ * @param {string} searchType 
+ * @param {number} restaurantId 
+ */
 async function asyncFetchData(paramValues, searchType, restaurantId = 0) {
     try {
         const url = composeUrl(paramValues, searchType, restaurantId);
@@ -65,12 +87,17 @@ async function asyncFetchData(paramValues, searchType, restaurantId = 0) {
         
         return responseJson;
     }
-    catch(error) {
-        //console.error(`Error in asyncFetchData: ${error.message}`);
-        throw new Error(error.message);    }
+    catch (error) {
+        throw error;
+    }
 }
 
-/* Data Service in charge of getting data from fetcher, and formatting it for return */
+/**
+ * Data Service in charge of getting data from fetcher, and formatting it for return
+ * 
+ * @param {object} paramValues 
+ * @param {string} searchType 
+ */
 export async function getData(paramValues, searchType) {
     try {
         const data = await asyncFetchData(paramValues, searchType);
@@ -81,8 +108,7 @@ export async function getData(paramValues, searchType) {
         return data.response.venues;
     } 
     catch (error) {
-        //console.error(`Error in asyncManageData: ${error.message}`);
-        throw new Error(error.message);
+        throw error;
     }
 }
 

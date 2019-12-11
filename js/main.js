@@ -4,8 +4,12 @@ import { createMap } from './googleMaps.js';
 'use strict';
 
 $(displayError(false));
-$()
 
+/**
+ * Event listener that adds a delegated onclick event to each input.readmore button that may be generated, to:
+ * 1. change the button text accordingly
+ * 2. call function generateMap for each restaurant card
+ */
 function readMore() {
     $('main').on('click', 'input.read-more', function (event) {
         const id = event.target.id;
@@ -23,7 +27,12 @@ function readMore() {
 $(readMore);
 
 
-/* Event Listener for User Action */
+/**
+ * Event listener for Search button, that:
+ * 1. deletes any card in the UI
+ * 2. hides the Error card
+ * 3. starts a new search
+ */
 function search() {
     $('#submit').on('click', event => {
         event.preventDefault();
@@ -42,41 +51,56 @@ function search() {
 $(search);
 
 
-/* load restaurants info into local objects */
+/**
+ * Function that requests restaurants info and displays the result in the UI
+ * 
+ * @param {object} paramValues 
+ */
 async function manageRestaurants(paramValues) {
     try {
         const data = await getData(paramValues, 'search');
         clearResults();
         displayResults(data);
-        
     }
     catch (error) {
-        //console.error(`Error in manageRestaurants: ${error.message}`);
         displayError(true);
-        
     }
 }
 
 
-/* validate that the fetch data is not undefined */
+/**
+ * Function that validates if a value is undefined
+ * 
+ * @param {object} value 
+ */
 function validateData(value) {
     return value != undefined ? value : 'not available';
 }
 
 
-/* Function to compose the photo url */
+/**
+ * Function to compose a photo url
+ * 
+ * @param {object} photo 
+ */
 function composePhoto(photo) {
     return `${photo.prefix}300x300${photo.suffix}`;
 }
 
 
-/* returns a random number to compose default photo url */
+/**
+ * Function that returns a random number from 1 to 5, both inclusive
+ */
 function getRandomNumber() {
     return Math.floor(Math.random() * (5 - 1 + 1)) + 1;
 }
 
 
-/* Render HTML with data */
+/**
+ * Function that renders the received API data into the UI
+ * 
+ * @param {object} data 
+ */
 function displayResults(data) {
 
     try {
@@ -140,23 +164,28 @@ function displayResults(data) {
 
     }
     catch (error) {
-        //console.log(`Error en displayResults(): ${error.message}`);
+        throw error;
     }
 }
 
+/**
+ * Function that generates the HTML to render reviews, if available.
+ * 
+ * @param {object} reviews 
+ */
 function displayReviews(reviews) {
     try {
         let htmlReviews;
         if (reviews.groups.length > 0) {
             htmlReviews = `<div class="reviews"><div class="reviews-container">`;
-            for (let i = 0; i < 2; i++) {
+            for (let i = 0; i < 2 && i < reviews.groups[0].items.length; i++) {
+
                 const review = reviews.groups[0].items[i];
                 htmlReviews += `<div class="review">
                 <h4>${review.user.firstName} ${review.user.lastName != undefined ? review.user.lastName: ''}:</h4> 
                 <q>${review.text}</q></div>`;
             }
             htmlReviews += '</div></div>';
-            
         }
         else {
             htmlReviews = '';
@@ -164,10 +193,15 @@ function displayReviews(reviews) {
         return htmlReviews;
     } 
     catch (error) {
-        //console.log(`Error in displayReview(): ${error.message}`);
+        throw error;
     }
 }
 
+/**
+ * Function that collects the necessary data and calls the Google Maps API map generator
+ * 
+ * @param {number} id 
+ */
 function generateMap(id) {
     try{
         const lat = $(`div#result-card input#lat${id}`).val();
@@ -176,16 +210,23 @@ function generateMap(id) {
         createMap(canvas, lat, lng);
     }
     catch (error) {
-        //console.log(`Error in generateMap(): ${error.message}`);
+        throw error;
     }
 }
 
+/**
+ * Function that clears the HTML from the cards container
+ */
 function clearResults() {
     $('div.cards-container').html('');
-    //console.log('cards cleared.');
 }
 
 
+/**
+ * Function that toggles the visibility of the Error card
+ * 
+ * @param {boolean} boolean 
+ */
 /* Function to display an error on the UI */
 function displayError(boolean) {
     boolean ? $ ('.errorDiv').show() : $('.errorDiv').hide();
