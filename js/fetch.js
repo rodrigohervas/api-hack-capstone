@@ -27,7 +27,7 @@ function composeUrl(paramValues, searchType, restaurantId = 0) {
     };
 
     if (searchType === 'search') {
-        params.near = paramValues.location;
+        params.near = paramValues.searchLocation;
         params.query = dataType;
         params.categoryId = venueCategory;
         params.radius = radius;
@@ -76,7 +76,7 @@ function generateUrl(params, searchType, restaurantId = 0) {
 async function asyncFetchData(paramValues, searchType, restaurantId = 0) {
     try {
         const url = composeUrl(paramValues, searchType, restaurantId);
-        
+        console.log(`url: ${url}`);
         const response = await fetch(url);
 
         if (!response.ok) {

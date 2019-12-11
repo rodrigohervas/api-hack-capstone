@@ -1,8 +1,8 @@
 export { configuration };
 
 const configuration = {
-    "clientId": "1CLPMGLQE1KPGDDD2WO1QVR1MEQYTSQPLSJ5GBYWF5EYUAZX",
-    "clientSecret": "10XMSOQBGNGQZVRBD3UT45VYDS3L3HFSYY3IZJTCOSOM32WS",  
+    "clientId": "UPUCVQHXS2ZRSGNHNJ3C1MULIWYME1RER2AGE4Q5O2LXHG5I",
+    "clientSecret": "PV3T54NFYJOZCN2MYP0FUAD1TJZFXFWZBHJIZO5GBCK1QZIT",  
     "venueCategory": "4d4b7105d754a06374d81259", 
     "dataType": "restaurant", 
     "radius": "5000", 

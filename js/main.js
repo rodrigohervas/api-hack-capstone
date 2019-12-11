@@ -41,10 +41,10 @@ function search() {
         displayError(false);
         
         const params = {
-            location: $('#area-search').val(),
+            searchLocation: $('#area-search').val(),
             number: 10, 
         };
-
+        
         manageRestaurants(params);
     })
 }
