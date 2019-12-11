@@ -1,17 +1,20 @@
 # DineOut
 
-A restaurant search engine to find restaurants. Users can search for restaurants in any city, and they will get restaurants, with their location, reviews and more info.
+A restaurant search engine to find restaurants in a city. Users can search for restaurants in any city, and they will get a list of restaurants, with their location, reviews and more info.
 
 ## Screenshots
-Landing Page:
+
+**Landing Page:**
 
 ![landing page](screenshots/landing-page.png)
 
-Results Page:
+
+**Results Page:**
 
 ![results page](screenshots/results-page.png)
 
-Error Page:
+
+**Error Page:**
 
 ![error page](screenshots/error-page.png)
 
