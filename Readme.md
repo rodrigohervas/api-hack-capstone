@@ -39,7 +39,7 @@ A restaurant search engine to find restaurants in a city. Users can search for r
 
 ## Live Demo
 
-- [Live Demo](https://rodrigohervas.github.io/api-hack-capstone/index.html)
+- [Live Demo](https://rodrigohervas.github.io/dineout/index)
 
 ## Author
 
