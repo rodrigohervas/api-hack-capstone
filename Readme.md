@@ -1,6 +1,6 @@
 # DineOut
 
-A restaurant search engine to find restaurants in a city. Users can search for restaurants in any city, and they will get a list of restaurants, with their location, reviews and more info.
+A restaurant search engine to find restaurants in a city. Users can search for restaurants in any city, and they will get a list of restaurants, with their location, reviews and more info. Powered by [Foursquare API](https://developer.foursquare.com/) and [Google Maps API](https://cloud.google.com/maps-platform/).
 
 ## Screenshots
 
@@ -26,12 +26,15 @@ A restaurant search engine to find restaurants in a city. Users can search for r
 * jQuery
 * Javascript
 
+* Foursquare API
+* Google Maps API
+
 
 ## Features
 
 * Search for a list of restaurants in a city
 * Get restaurants
-* Get restaurant details
+* Get restaurant details and map location
 * Get restaurant reviews
 
 ## Live Demo
