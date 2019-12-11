@@ -1,14 +1,40 @@
-## DineOut:
+# DineOut
 
-### api-hack-capstone
+A restaurant search engine to find restaurants. Users can search for restaurants in any city, and they will get restaurants, with their location, reviews and more info.
+
+## Screenshots
+Landing Page:
+
+![landing page](screenshots/landing-page.png)
+
+Results Page:
+
+![results page](screenshots/results-page.png)
+
+Error Page:
+
+![error page](screenshots/error-page.png)
 
 
-This is an app to search for restaurants in your favorite cities.
+## Built With
 
-The technologies used to build this app are: HTML, CSS, JavaScript and jQuery.
+* HTML5
+* CSS3
+* jQuery
+* Javascript
 
-Powered by &nbsp;<a href="https://developer.foursquare.com/" target="_blank">Foursquare</a>&nbsp; and &nbsp; <a href="https://cloud.google.com/maps-platform/" target="_blank"> Google Maps</a>
 
-Would you like to test it?: https://rodrigohervas.github.io/api-hack-capstone/index.html
+## Features
 
+* Search for a list of restaurants in a city
+* Get restaurants
+* Get restaurant details
+* Get restaurant reviews
 
+## Live Demo
+
+- [Live Demo](https://rodrigohervas.github.io/api-hack-capstone/index.html)
+
+## Author
+
+**Rodrigo Hervas** - [LinkedIn](https://www.linkedin.com/in/rodrigo-hervas-54037013)
