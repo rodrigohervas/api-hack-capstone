@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DineOut</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat%7COpen+Sans%7CPlayfair+Display%7CRoboto%7CLato%7CNunito&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="./img/logo.png" alt="DineOut" class="logo">
+            <form action="Index.html" method="GET" class="search-form">
+
+                <h1 class="header-phrase">Fine dining in your favorite city</h1>
+                <div class="search-container">
+                    <input type="text" name="area-search" id="area-search" placeholder="Chicago, IL or Los Angeles" >
+                    <input id="submit" class="submit border" type="submit" value="Search">
+                </div>
+
+            </form>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="cards-container">
+            <div id="welcome-card" class="welcome-card">
+                <h3>Welcome to DineOut!</h3>
+                Type a city or town where you would like to find a restaurant and we'll do it for you.
+            </div>                       
+        </div>
+
+        <div class="errorDiv">
+            <div class="errorText">
+                    <h3>0 results</h3>
+                    We couldn't find any restaurants matching your search. Please try again.
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-link">
+            <a href="https://www.linkedin.com/in/rodrigo-hervas-54037013" class="footer" target="_blank">&copy; Rodrigo Hervas</a>
+        </div>
+        <div class="powered-by">
+            Powered by &nbsp;<a href="https://developer.foursquare.com/" target="_blank">Foursquare</a>&nbsp; and &nbsp;
+            <a href="https://cloud.google.com/maps-platform/" target="_blank"> Google Maps</a>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/googleMaps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgmXoQQYoDMbkABqfTkRt5zidF9nheUoE"></script>
+</body>
+
+</html>
