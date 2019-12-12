@@ -8,17 +8,17 @@ A restaurant search engine to find restaurants in a city. Users can search for r
 
 ![landing page](screenshots/landing-page.png)
 
-
+***
 **Results Page:**
 
 ![results page](screenshots/results-page.png)
 
-
+***
 **Error Page:**
 
 ![error page](screenshots/error-page.png)
 
-
+***
 ## Built With
 
 * HTML5
