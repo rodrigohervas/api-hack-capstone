@@ -4,6 +4,7 @@ import { createMap } from './googleMaps.js';
 'use strict';
 
 $(displayError(false));
+$(displayLoader(false));
 
 /**
  * Event listener that adds a delegated onclick event to each input.readmore button that may be generated, to:
@@ -39,10 +40,11 @@ function search() {
 
         clearResults();
         displayError(false);
+        displayLoader(true);
         
         const params = {
             searchLocation: $('#area-search').val(),
-            number: 10, 
+            number: 15, 
         };
         
         manageRestaurants(params);
@@ -61,8 +63,10 @@ async function manageRestaurants(paramValues) {
         const data = await getData(paramValues, 'search');
         clearResults();
         displayResults(data);
+        displayLoader(false);
     }
     catch (error) {
+        displayLoader(false);
         displayError(true);
     }
 }
@@ -229,7 +233,10 @@ function clearResults() {
  */
 /* Function to display an error on the UI */
 function displayError(boolean) {
-    boolean ? $ ('.errorDiv').show() : $('.errorDiv').hide();
+    boolean ? $('.errorDiv').show() : $('.errorDiv').hide();
 }
 
 
+function displayLoader(boolean) {
+    boolean ? $('.loader').show() : $('.loader').hide();
+}
