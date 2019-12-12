@@ -44,7 +44,7 @@ function search() {
         
         const params = {
             searchLocation: $('#area-search').val(),
-            number: 15, 
+            number: 10, 
         };
         
         manageRestaurants(params);
@@ -231,12 +231,15 @@ function clearResults() {
  * 
  * @param {boolean} boolean 
  */
-/* Function to display an error on the UI */
 function displayError(boolean) {
     boolean ? $('.errorDiv').show() : $('.errorDiv').hide();
 }
 
-
+/**
+ * Function that toggles the visibility of the loader div
+ * 
+ * @param {boolean} boolean 
+ */
 function displayLoader(boolean) {
     boolean ? $('.loader').show() : $('.loader').hide();
 }
