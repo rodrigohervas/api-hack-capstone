@@ -18,7 +18,7 @@ A restaurant search engine to find restaurants in a city. Users can search for r
 
 ![error page](screenshots/error-page.png)
 
-***
+
 ## Built With
 
 * HTML5
