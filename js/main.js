@@ -118,7 +118,8 @@ function displayResults(data) {
         <input type="hidden" id="lat${number}" value="${validateData(restaurant.location.lat)}">
         <input type="hidden" id="lng${number}" value="${validateData(restaurant.location.lng)}">
 
-        <img id="result-card-img" src="${restaurant.bestPhoto != undefined ? composePhoto(restaurant.bestPhoto) : `./img/food-${getRandomNumber()}-300x300.jpg`}"
+        <img
+         id="result-card-img" src="${restaurant.bestPhoto != undefined ? composePhoto(restaurant.bestPhoto) : `./img/food-${getRandomNumber()}-300x300.jpg`}"
          alt="${validateData(restaurant.name)}" class="result-img">
         <div class="result-card-text">
             <div class="result-card-text-header">
